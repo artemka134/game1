@@ -20,6 +20,8 @@ public class spawn_tower : MonoBehaviour
     {
         ob.object_for_spawn = object_for_spawn;
         ob.obj_spawn = obj_spawn;
+        ob.green = green;
+        ob.red = red;
     }
     void Update()
     {
@@ -28,11 +30,11 @@ public class spawn_tower : MonoBehaviour
         obj_spawn.transform.position = mousePosition;
         ob.mousePosition = mousePosition;
     }
-    void OnTriggerEnter2D(Collider2D collider2D)
+    void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.name == "объект спавна")
         {
-            obj_spawn.GetComponent<SpriteRenderer>().color = green;
+            coloring_obj_spawn(green);
             mouse_spawn = true;
         }
     }
@@ -40,9 +42,13 @@ public class spawn_tower : MonoBehaviour
     {
         if (collider2D.gameObject.name == "объект спавна")
         {
-            obj_spawn.GetComponent<SpriteRenderer>().color = red;
+            coloring_obj_spawn(red);
             mouse_spawn = false;
         }
+    }
+    public void coloring_obj_spawn(Color color)
+	{
+        obj_spawn.GetComponent<SpriteRenderer>().color = color;
     }
     public void spawn_tower_mouse()
     {
@@ -51,7 +57,7 @@ public class spawn_tower : MonoBehaviour
            Instantiate(ob.object_for_spawn[number_tower], mousePosition, Quaternion.identity);
         }
     }
-    
-    public void select_an_object_town_lvl1()
-	{number_tower = 0; obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];}
+
+	public void select_an_object_town_lvl1()
+	{number_tower = 0; obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower]; obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.486687f, 5.140042f);}
 }
