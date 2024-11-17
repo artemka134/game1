@@ -10,7 +10,7 @@ public class down_spawn : MonoBehaviour
     }
 	public void OnTriggerStay2D(Collider2D collider)
 	{
-		if (collider.gameObject.tag == "tower")
+		if (collider.gameObject.tag == "tower" && collider.layerOverridePriority == 1)
 		{
 			spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.red);
 			spawn_tower.mouse_spawn = false;
