@@ -12,9 +12,17 @@ public class tower : MonoBehaviour
 	public GameObject missile_obj;
 	public void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.tag == "zombie")
+		if (collision.gameObject.tag == "zombie" && collision.gameObject.GetComponent<movement_zombi>().spawn == true)
 		{
 			position_zombie.Add(collision.gameObject);
+		}
+	}
+	public void OnTriggerStay2D(Collider2D other)
+	{
+		if (other.gameObject.tag == "zombie" && position_zombie.Contains(other.gameObject) == false && other.gameObject.GetComponent<movement_zombi>().spawn == true)
+		{
+			print("Dd");
+			position_zombie.Add(other.gameObject);
 		}
 	}
 	public void OnTriggerExit2D(Collider2D collision)
@@ -22,7 +30,6 @@ public class tower : MonoBehaviour
 		if (collision.gameObject.tag == "zombie")
 		{
 			position_zombie.Remove(collision.gameObject);
-			position_zombie.Sort();
 		}
 	}
 	public void Update()
@@ -44,7 +51,7 @@ public class tower : MonoBehaviour
 				int min = i;
 				for (int j = i + 1; j < position_zombie.Count; j++)
 				{
-					if (Vector3.Distance(position_zombie[j].transform.position, transform.position) > Vector3.Distance(position_zombie[min].transform.position, transform.position))
+					if (Vector3.Distance(position_zombie[j].transform.position, transform.position) < Vector3.Distance(position_zombie[min].transform.position, transform.position))
 					{
 						min = j;
 					}
