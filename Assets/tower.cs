@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 
 public class tower : MonoBehaviour
 {
+	public float max_health = 100;
+	public float health = 100;
 	public float second = 0;
 	public List<GameObject> position_zombie = new List<GameObject>();
 	public GameObject purpose;
@@ -41,6 +45,11 @@ public class tower : MonoBehaviour
 			shot();
 			
 		}
+	}
+	public void health_check()
+	{
+		transform.Find("Canvas/Image/текст").gameObject.GetComponent<TextMeshProUGUI>().text = health + "/" + max_health;
+		transform.Find("Canvas/Image").gameObject.GetComponent<Image>().fillAmount = health / max_health;
 	}
 	public void shot()
 	{
