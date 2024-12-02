@@ -144,7 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee6a1cf440252b4d848a56889f7fb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purpose: {fileID: 0}
+  damage_missile: 1
+  purpose: {x: 3.4817536, y: 0.9686935, z: -3.591212}
+  obj_attack: {fileID: 0}
 --- !u!50 &-2144856829603174205
 Rigidbody2D:
   serializedVersion: 4

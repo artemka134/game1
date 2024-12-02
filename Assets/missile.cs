@@ -6,10 +6,12 @@ using static UnityEngine.GraphicsBuffer;
 
 public class missile : MonoBehaviour
 {
-    public GameObject purpose;
+	public float damage_missile;
+    public Vector3 purpose;
+	public GameObject obj_attack;
 	public void Start()
 	{
-		Vector3 targ = purpose.transform.position;
+		Vector3 targ = purpose;
 		targ.z = 0f;
 
 		Vector3 objectPos = transform.position;
@@ -21,12 +23,13 @@ public class missile : MonoBehaviour
 	}
 	public void Update()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, purpose.transform.position, 0.2f);
+		transform.position = Vector3.MoveTowards(transform.position, purpose, 0.18f);
 	}
 	public void OnTriggerStay2D(Collider2D collision)
 	{
-		if (collision.gameObject == purpose)
+		if (collision.gameObject == obj_attack)
 		{
+			collision.gameObject.GetComponent<movement_zombi>().damage_received(damage_missile);
 			Destroy(gameObject);
 		}
 	}

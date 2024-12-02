@@ -121,9 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc03148d294c854abe0e4cd0ebaca44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: 0
+  spawn: 1
   speed: 0.005
+  damage: 1
+  health: 3
   point_movement: {fileID: 0}
+  attack_tower: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!61 &6692910496730863656
 BoxCollider2D:
   m_ObjectHideFlags: 0
