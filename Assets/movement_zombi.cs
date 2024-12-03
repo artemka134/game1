@@ -17,11 +17,12 @@ public class movement_zombi : MonoBehaviour
 	{
 		anim = transform.gameObject.GetComponent<Animator>();
 	}
-	public void Update()
+	public void FixedUpdate()
 	{
 		if (attack_tower == null)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, point_movement.transform.position, speed);
+
 		}
 		if (attack_tower != null)
 		{

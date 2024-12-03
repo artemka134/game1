@@ -21,7 +21,7 @@ public class missile : MonoBehaviour
 		float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 	}
-	public void Update()
+	public void FixedUpdate()
 	{
 		transform.position = Vector3.MoveTowards(transform.position, purpose, 0.18f);
 	}
