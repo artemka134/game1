@@ -21,12 +21,12 @@ public class movement_zombi : MonoBehaviour
 	{
 		if (attack_tower == null)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, point_movement.transform.position, speed);
+			transform.position = Vector2.MoveTowards(transform.position, point_movement.transform.position, speed);
 
 		}
 		if (attack_tower != null)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, attack_tower.transform.position, speed);
+			transform.position = Vector2.MoveTowards(transform.position, attack_tower.transform.position, speed);
 		}
 	}
 	public void OnTriggerStay2D(Collider2D collision)

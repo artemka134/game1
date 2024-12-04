@@ -7,14 +7,13 @@ using static UnityEngine.GraphicsBuffer;
 public class missile : MonoBehaviour
 {
 	public float damage_missile;
-    public Vector3 purpose;
+    public Vector2 purpose;
 	public GameObject obj_attack;
 	public void Start()
 	{
-		Vector3 targ = purpose;
-		targ.z = 0f;
+		Vector2 targ = purpose;
 
-		Vector3 objectPos = transform.position;
+		Vector2 objectPos = transform.position;
 		targ.x = targ.x - objectPos.x;
 		targ.y = targ.y - objectPos.y;
 

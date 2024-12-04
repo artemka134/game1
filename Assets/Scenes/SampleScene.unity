@@ -764,71 +764,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &699779315
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 502235625470982725, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 502235625470982725, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: point_movement
-      value: 
-      objectReference: {fileID: 1454118925}
-    - target: {fileID: 3467709918257300996, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_Name
-      value: "\u0437\u043E\u043C\u0431\u0438 (1)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073545110333648362, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
 --- !u!1 &812116436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1263,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61672343079589720, guid: 1661d55fd0ad1a64b97574250e861522, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1625421732665136572, guid: 1661d55fd0ad1a64b97574250e861522, type: 3}
       propertyPath: m_Name
       value: "\u0431\u0430\u0448\u043D\u044F"
@@ -1371,10 +1310,6 @@ PrefabInstance:
     - target: {fileID: 3953951435892066454, guid: 1661d55fd0ad1a64b97574250e861522, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6444120227253894606, guid: 1661d55fd0ad1a64b97574250e861522, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1899,7 +1834,7 @@ MonoBehaviour:
   - {fileID: 1284873161}
   - {fileID: 1454118925}
   zombie: {fileID: 3467709918257300996, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-  time_spawn: 1
+  time_spawn: 3
   second: 0
 --- !u!4 &1620000406
 Transform:
@@ -2424,7 +2359,6 @@ SceneRoots:
   - {fileID: 1454118926}
   - {fileID: 1240735930}
   - {fileID: 955477445}
-  - {fileID: 699779315}
   - {fileID: 1435519707}
   - {fileID: 1264794154}
   - {fileID: 1537023799}

@@ -12,7 +12,7 @@ public class spawn_tower : MonoBehaviour
     public GameObject[] object_for_spawn = {};
     public int number_tower;
     public Color green; public Color red;
-    Vector3 mousePosition;
+    Vector2 mousePosition;
     public static bool mouse_spawn = false;
     public Sprite[] tower_textur = {};
 
@@ -26,7 +26,6 @@ public class spawn_tower : MonoBehaviour
     void Update()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
         obj_spawn.transform.position = mousePosition;
         ob.mousePosition = mousePosition;
     }
