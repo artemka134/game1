@@ -23,6 +23,10 @@ public class missile : MonoBehaviour
 	public void FixedUpdate()
 	{
 		transform.position = Vector3.MoveTowards(transform.position, purpose, 0.18f);
+		if (obj_attack == null )
+		{
+			Destroy(gameObject);
+		}
 	}
 	public void OnTriggerStay2D(Collider2D collision)
 	{

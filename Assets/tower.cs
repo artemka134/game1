@@ -29,6 +29,10 @@ public class tower : MonoBehaviour
 		{
 			position_zombie.Add(other.gameObject);
 		}
+		if (other.gameObject.tag == "zombie" && other.gameObject.GetComponent<movement_zombi>().tower.Contains(gameObject) && other.gameObject.GetComponent<movement_zombi>().spawn == true)
+		{
+			other.gameObject.GetComponent<movement_zombi>().tower.Add(gameObject);
+		}
 	}
 	public void OnTriggerExit2D(Collider2D collision)
 	{
@@ -72,23 +76,37 @@ public class tower : MonoBehaviour
 		{
 			for (int i = 0; i < position_zombie.Count - 1; i++)
 			{
-				int min = i;
-				for (int j = i + 1; j < position_zombie.Count; j++)
+				if (position_zombie[i] == null)
 				{
-					if (Vector3.Distance(position_zombie[j].transform.position, transform.position) < Vector3.Distance(position_zombie[min].transform.position, transform.position))
-					{
-						min = j;
-					}
+					position_zombie.Remove(position_zombie[i]);
 				}
-			    GameObject dummy = position_zombie[i];
-				position_zombie[i] = position_zombie[min];
-				position_zombie[min] = dummy;
-				min = i;
+				else
+				{
+					int min = i;
+					for (int j = i + 1; j < position_zombie.Count; j++)
+					{
+						if (Vector2.Distance(position_zombie[j].transform.position, transform.position) < Vector2.Distance(position_zombie[min].transform.position, transform.position))
+						{
+							min = j;
+						}
+					}
+					GameObject dummy = position_zombie[i];
+					position_zombie[i] = position_zombie[min];
+					position_zombie[min] = dummy;
+					min = i;
+				}
 			}
-			purpose = position_zombie[0];
-			missile_obj.GetComponent<missile>().purpose = purpose.transform.position;
-			missile_obj.GetComponent<missile>().obj_attack = purpose;
-		    Instantiate(missile_obj, transform.position, missile_obj.transform.rotation);
+		
+			if (position_zombie[0] != null)
+			{
+				purpose = position_zombie[0];
+			}
+			if (purpose != null)
+			{
+				missile_obj.GetComponent<missile>().purpose = purpose.transform.position;
+				missile_obj.GetComponent<missile>().obj_attack = purpose;
+				Instantiate(missile_obj, transform.position, missile_obj.transform.rotation);
+			}
 		}
 	}
 }

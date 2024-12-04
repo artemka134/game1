@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc03148d294c854abe0e4cd0ebaca44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: 1
+  spawn: 0
   speed: 0.005
   damage: 1
   health: 3

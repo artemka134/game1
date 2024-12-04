@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class movement_zombi : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class movement_zombi : MonoBehaviour
 	public float health;
 	public GameObject point_movement;
 	public GameObject attack_tower = null;
+	public List<GameObject> tower = new List<GameObject>();
 	public Animator anim;
 
 	public void Start()
@@ -56,6 +58,16 @@ public class movement_zombi : MonoBehaviour
 			}
 			}
 		}
+	public void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.tag == "tower")
+		{
+			if (collision.layerOverridePriority == 0)
+			{
+				tower.Remove(collision.gameObject);
+			}
+		}
+	}
 	public void attack()
 	{
 		attack_tower.transform.gameObject.GetComponent<tower>().health -= damage;
@@ -68,6 +80,10 @@ public class movement_zombi : MonoBehaviour
 
 		if (health <= 0)
 		{
+			for (int i = 0; i < tower.Count; i++)
+			{
+				tower[i].GetComponent<tower>().position_zombie.Remove(gameObject);
+			}
 			Destroy(gameObject);
 		}
 	}
