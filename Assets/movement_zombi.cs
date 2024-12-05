@@ -54,7 +54,6 @@ public class movement_zombi : MonoBehaviour
 			if (other.layerOverridePriority == 3)
 			{
 				attack_tower = other.gameObject;
-				print("DDD");
 			}
 			}
 		}
@@ -70,8 +69,16 @@ public class movement_zombi : MonoBehaviour
 	}
 	public void attack()
 	{
-		attack_tower.transform.gameObject.GetComponent<tower>().health -= damage;
-		attack_tower.transform.gameObject.GetComponent<tower>().health_check();
+		if (attack_tower != null)
+		{
+			attack_tower.transform.gameObject.GetComponent<tower>().health -= damage;
+			attack_tower.transform.gameObject.GetComponent<tower>().health_check();
+		}
+		else
+		{
+			attack_tower = null;
+			anim.SetBool("attack", false);
+		}
 	}
 	public void damage_received(float damage)
 	{

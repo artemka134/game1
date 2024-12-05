@@ -12,7 +12,7 @@ public class spawn_tower : MonoBehaviour
     public GameObject[] object_for_spawn = {};
     public int number_tower;
     public Color green; public Color red;
-    Vector2 mousePosition;
+    Vector3 mousePosition;
     public static bool mouse_spawn = false;
     public Sprite[] tower_textur = {};
 
@@ -23,9 +23,10 @@ public class spawn_tower : MonoBehaviour
         ob.green = green;
         ob.red = red;
     }
-    void Update()
+    void FixedUpdate()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = -0.5f;
         obj_spawn.transform.position = mousePosition;
         ob.mousePosition = mousePosition;
     }
@@ -53,7 +54,9 @@ public class spawn_tower : MonoBehaviour
     {
         if (mouse_spawn == true && ob.obj_spawn.GetComponent<SpriteRenderer>().sprite != null)
         {
+           mousePosition.z = 0;
            Instantiate(ob.object_for_spawn[number_tower], mousePosition, Quaternion.identity);
+           mousePosition.z = -0.5f;
         }
     }
 
