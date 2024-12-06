@@ -74,7 +74,6 @@ public class tower : MonoBehaviour
 					position_zombie[i].GetComponent<Animator>().SetBool("attack", false);
 					position_zombie[i].GetComponent<movement_zombi>().speed = 0.005f;
 				}
-				print(position_zombie[i]);
 			}
 			Destroy(gameObject);
 		}

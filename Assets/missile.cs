@@ -22,8 +22,8 @@ public class missile : MonoBehaviour
 	}
 	public void FixedUpdate()
 	{
-		transform.position = Vector3.MoveTowards(transform.position, purpose, 0.18f);
-		if (obj_attack == null )
+		transform.position = Vector2.MoveTowards(transform.position, purpose, 0.18f);
+		if (Vector2.Distance(transform.position, purpose) == 0)
 		{
 			Destroy(gameObject);
 		}
