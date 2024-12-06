@@ -46,3 +46,6 @@ TagManager:
   - name: zombie
     uniqueID: 1560052971
     locked: 0
+  - name: tower
+    uniqueID: 3599869943
+    locked: 0
