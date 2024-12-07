@@ -30,11 +30,11 @@ public class tower : MonoBehaviour
 	}
 	public void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "zombie" && position_zombie.Contains(other.gameObject) == false && other.gameObject.GetComponent<movement_zombi>().spawn == true)
+		if (other.gameObject.tag == "zombie" && position_zombie.Contains(other.gameObject) == false && other.gameObject.GetComponent<movement_zombi>().spawn == true && other.gameObject.GetComponent<movement_zombi>().live == true)
 		{
 			position_zombie.Add(other.gameObject);
 		}
-		if (other.gameObject.tag == "zombie" && other.gameObject.GetComponent<movement_zombi>().tower.Contains(gameObject) && other.gameObject.GetComponent<movement_zombi>().spawn == true)
+		if (other.gameObject.tag == "zombie" && other.gameObject.GetComponent<movement_zombi>().tower.Contains(gameObject) == false && other.gameObject.GetComponent<movement_zombi>().spawn == true)
 		{
 			other.gameObject.GetComponent<movement_zombi>().tower.Add(gameObject);
 		}

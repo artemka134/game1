@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class movement_zombi : MonoBehaviour
 {
 	public bool spawn = false;
+	public bool live = true;
 	public float speed = 0.004f;
 	public float damage = 1;
 	public float health;
@@ -73,15 +74,21 @@ public class movement_zombi : MonoBehaviour
 	{
 		health -= damage;
 		anim.SetBool("damage", true);
-
+		anim.Play("damage");
 		if (health <= 0)
 		{
 			for (int i = 0; i < tower.Count; i++)
 			{
 				tower[i].GetComponent<tower>().position_zombie.Remove(gameObject);
 			}
-			Destroy(gameObject);
+			live = false;
+			anim.SetBool("dead", true);
+			speed = 0;
 		}
+	}
+	public void dead()
+	{
+		Destroy(gameObject);
 	}
 	public void stop_damage_anim()
 	{
