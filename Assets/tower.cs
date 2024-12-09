@@ -84,7 +84,7 @@ public class tower : MonoBehaviour
 		{
 			for (int i = 0; i < position_zombie.Count; i++)
 			{
-				if (position_zombie[i] == null)
+				if (position_zombie[i] == null || position_zombie[i].GetComponent<movement_zombi>().live == false)
 				{
 					position_zombie.Remove(position_zombie[i]);
 				}

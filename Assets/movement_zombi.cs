@@ -74,7 +74,7 @@ public class movement_zombi : MonoBehaviour
 	{
 		health -= damage;
 		anim.SetBool("damage", true);
-		anim.Play("damage");
+		anim.Play("damage", 1, 0);
 		if (health <= 0)
 		{
 			for (int i = 0; i < tower.Count; i++)
@@ -84,6 +84,7 @@ public class movement_zombi : MonoBehaviour
 			live = false;
 			anim.SetBool("dead", true);
 			speed = 0;
+			gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "dead_zombie";
 		}
 	}
 	public void dead()

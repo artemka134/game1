@@ -122,11 +122,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: 0
+  live: 1
   speed: 0.005
   damage: 1
-  health: 3
+  health: 2
   point_movement: {fileID: 0}
   attack_tower: {fileID: 0}
+  tower: []
   anim: {fileID: 0}
 --- !u!61 &6692910496730863656
 BoxCollider2D:

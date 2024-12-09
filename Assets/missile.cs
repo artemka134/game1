@@ -32,8 +32,11 @@ public class missile : MonoBehaviour
 	{
 		if (collision.gameObject == obj_attack)
 		{
-			collision.gameObject.GetComponent<movement_zombi>().damage_received(damage_missile);
-			Destroy(gameObject);
+			if (collision.gameObject.GetComponent<movement_zombi>().live == true)
+			{
+				collision.gameObject.GetComponent<movement_zombi>().damage_received(damage_missile);
+				Destroy(gameObject);
+			}
+			}
 		}
-	}
 }
