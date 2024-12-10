@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 479308683475149182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.11, y: 3.17, z: 0}
-  m_LocalScale: {x: 0.10420475, y: 0.12927027, z: 1}
+  m_LocalPosition: {x: 2.1313, y: 3.1513, z: 0}
+  m_LocalScale: {x: 0.09675411, y: 0.10893446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_missile: 1
-  purpose: {x: -0.16851148, y: -0.10357656}
+  purpose: {x: 6.760684, y: -2.1026685}
   obj_attack: {fileID: 0}
 --- !u!50 &-2144856829603174205
 Rigidbody2D:

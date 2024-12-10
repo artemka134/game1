@@ -43,14 +43,14 @@ TagManager:
   - name: baground
     uniqueID: 1924757891
     locked: 0
+  - name: tower
+    uniqueID: 3599869943
+    locked: 0
   - name: dead_zombie
     uniqueID: 3799628155
     locked: 0
   - name: zombie
     uniqueID: 1560052971
-    locked: 0
-  - name: tower
-    uniqueID: 3599869943
     locked: 0
   - name: tree
     uniqueID: 1755270137

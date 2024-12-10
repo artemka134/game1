@@ -32,7 +32,7 @@ public class spawn_tower : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collider2D)
     {
-        if (collider2D.gameObject.name == "объект спавна")
+        if (collider2D.gameObject.name == "объект спавна" && down_spawn.tower == false)
         {
             coloring_obj_spawn(green);
             mouse_spawn = true;

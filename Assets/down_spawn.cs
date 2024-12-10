@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class down_spawn : MonoBehaviour
 {
+	public static bool tower;
     void OnMouseDown()
     {
         spawn_tower.ob.spawn_tower_mouse();
@@ -14,6 +15,7 @@ public class down_spawn : MonoBehaviour
 		{
 			spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.red);
 			spawn_tower.mouse_spawn = false;
+			tower = true;
 		}
 	}
 	public void OnTriggerExit2D(Collider2D collider)
@@ -22,6 +24,7 @@ public class down_spawn : MonoBehaviour
 		{
 			spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.red);
 			spawn_tower.mouse_spawn = false;
+			tower = false;
 		}
 	}
 }
