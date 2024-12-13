@@ -86,7 +86,9 @@ public class movement_zombi : MonoBehaviour
 			speed = 0;
 			gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "dead_zombie";
 			basic.money += 2;
+			basic.score += 1;
 			basic.bs.profit_check();
+			basic.bs.score_check();
 		}
 	}
 	public void dead()

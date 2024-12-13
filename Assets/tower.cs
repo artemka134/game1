@@ -28,7 +28,7 @@ public class tower : MonoBehaviour
 		transform.Find("Canvas/Image/текст").gameObject.GetComponent<TextMeshProUGUI>().text = health + "/" + max_health;
 		transform.Find("Canvas/Image").gameObject.GetComponent<Image>().fillAmount = health / max_health;
 	}
-	public void OnTriggerEnter2D(Collider2D other)
+	public void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "zombie" && position_zombie.Contains(other.gameObject) == false && other.gameObject.GetComponent<movement_zombi>().spawn == true && other.gameObject.GetComponent<movement_zombi>().live == true)
 		{
