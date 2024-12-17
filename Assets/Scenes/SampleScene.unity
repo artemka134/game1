@@ -2465,7 +2465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReferenceResolution: {x: 720, y: 1280}
-  Mode: 2
+  Mode: 0
   MatchWidthOrHeight: 1
 --- !u!1 &542933321
 GameObject:

@@ -6,7 +6,7 @@ using TMPro;
 public class basic : MonoBehaviour
 {
 	public static basic bs = new basic();
-	public static float money = 60;
+	public static float money = 6000000;
 	public static float score = 0;
 	public TextMeshProUGUI money_text;
 	public TextMeshProUGUI score_text;

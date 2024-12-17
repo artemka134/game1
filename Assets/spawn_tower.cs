@@ -68,5 +68,5 @@ public class spawn_tower : MonoBehaviour
     }
 
 	public void select_an_object_town_lvl1()
-	{number_tower = 0; obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower]; obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.486687f, 5.140042f);}
+	{number_tower = 0; obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower]; obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.687186f, 5.140042f);}
 }
