@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage_missile: 1
-  purpose: {x: 6.760684, y: -2.1026685}
+  purpose: {x: -4.2579613, y: -2.941876}
   obj_attack: {fileID: 0}
 --- !u!50 &-2144856829603174205
 Rigidbody2D:
