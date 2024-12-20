@@ -11,11 +11,14 @@ public class spawn_tower : MonoBehaviour
     public GameObject obj_spawn;
     public GameObject[] object_for_spawn = {};
     public static int number_tower;
-    public static float[] price_tower = new float[] {10};
-    public Color green; public Color red;
+    public static float[] price_tower = new float[] {10, 100};
+    public Color green, red;
+    public Color green_bomb, red_bomb;
     Vector3 mousePosition;
+    public Vector2 spawn_bomb;
     public static bool mouse_spawn = false;
-    public Sprite[] tower_textur = {};
+    public static bool bomb = false;
+    public Sprite[] tower_textur;
 
     private void Start()
     {
@@ -23,6 +26,8 @@ public class spawn_tower : MonoBehaviour
         ob.obj_spawn = obj_spawn;
         ob.green = green;
         ob.red = red;
+        ob.green_bomb = green_bomb;
+        ob.red_bomb = red_bomb;
     }
     void FixedUpdate()
     {
@@ -31,15 +36,29 @@ public class spawn_tower : MonoBehaviour
         obj_spawn.transform.position = mousePosition;
         ob.mousePosition = mousePosition;
         if (basic.money < price_tower[number_tower])
-        { 
-            coloring_obj_spawn(red);
+        {
+            if (bomb == false)
+            {
+                coloring_obj_spawn(red);
+            }
+            else
+			{
+                coloring_obj_spawn(red_bomb);
+			}
 		}
     }
     void OnTriggerStay2D(Collider2D collider2D)
     {
-        if (collider2D.gameObject.name == "объект спавна" && down_spawn.tower == false && basic.money >= price_tower[number_tower])
+        if (collider2D.gameObject.name == "объект спавна" && basic.money >= price_tower[number_tower])
         {
-            coloring_obj_spawn(green);
+            if (down_spawn.tower == false && bomb == false)
+            {
+                coloring_obj_spawn(green);
+            }
+            if (bomb == true)
+            {
+                coloring_obj_spawn(green_bomb);
+            }
             mouse_spawn = true;
         }
     }
@@ -47,7 +66,14 @@ public class spawn_tower : MonoBehaviour
     {
         if (collider2D.gameObject.name == "объект спавна")
         {
-            coloring_obj_spawn(red);
+            if (bomb == false)
+            {
+                coloring_obj_spawn(red);
+            }
+            else
+			{
+                coloring_obj_spawn(red_bomb);
+            }
             mouse_spawn = false;
         }
     }
@@ -60,7 +86,16 @@ public class spawn_tower : MonoBehaviour
         if (mouse_spawn == true && ob.obj_spawn.GetComponent<SpriteRenderer>().sprite != null && basic.money >= price_tower[number_tower])
         {
            mousePosition.z = 0;
-           Instantiate(ob.object_for_spawn[number_tower], mousePosition, Quaternion.identity);
+            if (bomb == false)
+            {
+                Instantiate(ob.object_for_spawn[number_tower], mousePosition, Quaternion.identity);
+            }
+			else
+			{
+                Vector2 vec = new Vector2(mousePosition.x, 5.12f);
+                ob.object_for_spawn[number_tower].GetComponent<bombsc>().point_bomb = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(ob.object_for_spawn[number_tower], vec, Quaternion.identity);
+            }
            mousePosition.z = -0.5f;
            basic.money -= price_tower[number_tower];
            basic.bs.profit_check();
@@ -68,5 +103,19 @@ public class spawn_tower : MonoBehaviour
     }
 
 	public void select_an_object_town_lvl1()
-	{number_tower = 0; obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower]; obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.687186f, 5.140042f);}
+	{
+        number_tower = 0;
+        obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];
+        obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.687186f, 5.140042f);
+        obj_spawn.transform.localScale = new Vector3(0.358511418f, 0.349489331f, 1);
+        bomb = false;
+    }
+    public void select_an_object_bomb()
+	{
+        number_tower = 1;
+        obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];
+        obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(1.026046f, 1.026165f);
+        obj_spawn.transform.localScale = new Vector3(3.45649648f, 1.98367476f, 1);
+        bomb = true;
+    }
 }

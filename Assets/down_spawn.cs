@@ -11,21 +11,26 @@ public class down_spawn : MonoBehaviour
     }
 	public void OnTriggerStay2D(Collider2D collider)
 	{
-		if (collider.gameObject.tag == "tower" && collider.layerOverridePriority == 1 || collider.gameObject.tag == "zombie")
+		if (spawn_tower.bomb == false)
 		{
-			print("dd");
-			spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.red);
-			spawn_tower.mouse_spawn = false;
-			tower = true;
+			if (collider.gameObject.tag == "tower" && collider.layerOverridePriority == 1 || collider.gameObject.tag == "zombie")
+			{
+				spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.red);
+				spawn_tower.mouse_spawn = false;
+				tower = true;
+			}
 		}
 	}
 	public void OnTriggerExit2D(Collider2D collider)
 	{
-		if (collider.gameObject.tag == "tower"  && collider.layerOverridePriority == 1 || collider.gameObject.tag == "zombie")
+		if (spawn_tower.bomb == false)
 		{
-			spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.green);
-			spawn_tower.mouse_spawn = false;
-			tower = false;
+			if (collider.gameObject.tag == "tower" && collider.layerOverridePriority == 1 || collider.gameObject.tag == "zombie")
+			{
+				spawn_tower.ob.coloring_obj_spawn(spawn_tower.ob.green);
+				spawn_tower.mouse_spawn = false;
+				tower = false;
+			}
 		}
 	}
 }

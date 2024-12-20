@@ -22,7 +22,7 @@ public class missile : MonoBehaviour
 	}
 	public void FixedUpdate()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, purpose, 0.18f);
+		transform.position = Vector2.MoveTowards(transform.position, purpose, 10.5f * Time.deltaTime);
 		if (Vector2.Distance(transform.position, purpose) == 0)
 		{
 			Destroy(gameObject);
