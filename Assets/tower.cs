@@ -103,10 +103,22 @@ public class tower : MonoBehaviour
 			}
 			if (position_zombie[0].GetComponent<movement_zombi>().spawn != false)
 			{
-				purpose = position_zombie[0];
-				missile_obj.GetComponent<missile>().purpose = purpose.transform.position;
-				missile_obj.GetComponent<missile>().obj_attack = purpose;
-				Instantiate(missile_obj, transform.position, missile_obj.transform.rotation);
+				int a = 0;
+				if (basic.missle.Count > 0 && position_zombie.Count > 1)
+				{
+					for (int i = 0; i < basic.missle.Count; i++)
+					{
+						if (basic.missle[i].GetComponent<missile>().obj_attack == position_zombie[0] && position_zombie[0].GetComponent<movement_zombi>().health == 1)
+						{
+							a++;
+							break;
+						}
+					}
+				}
+					purpose = position_zombie[a];
+					missile_obj.GetComponent<missile>().purpose = purpose.transform.position;
+					missile_obj.GetComponent<missile>().obj_attack = purpose;
+					Instantiate(missile_obj, transform.position, missile_obj.transform.rotation);
 			}
 			}
 		}

@@ -24,7 +24,7 @@ public class bombsc : MonoBehaviour
 			{
 				collision.gameObject.GetComponent<movement_zombi>().damage_received(22);
 			}
-			//Destroy(gameObject);
+			Destroy(gameObject);
 		}
 	}
 }

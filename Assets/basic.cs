@@ -8,6 +8,7 @@ public class basic : MonoBehaviour
 	public static basic bs = new basic();
 	public static float money = 6000000;
 	public static float score = 0;
+	public static List<GameObject> missle = new List<GameObject>();
 	public TextMeshProUGUI money_text;
 	public TextMeshProUGUI score_text;
 	public Animator anim_score;

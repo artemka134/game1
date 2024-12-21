@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class spawn_tower : MonoBehaviour
 {
@@ -10,15 +12,18 @@ public class spawn_tower : MonoBehaviour
 
     public GameObject obj_spawn;
     public GameObject[] object_for_spawn = {};
+    public Image bomb_img;
     public static int number_tower;
     public static float[] price_tower = new float[] {10, 100};
+    public static float time_bomb = 10;
     public Color green, red;
     public Color green_bomb, red_bomb;
     Vector3 mousePosition;
     public Vector2 spawn_bomb;
     public static bool mouse_spawn = false;
     public static bool bomb = false;
-    public Sprite[] tower_textur;
+	public static bool bomb_time = false;
+	public Sprite[] tower_textur;
 
     private void Start()
     {
@@ -29,9 +34,15 @@ public class spawn_tower : MonoBehaviour
         ob.green_bomb = green_bomb;
         ob.red_bomb = red_bomb;
     }
-    void FixedUpdate()
+    void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (bomb_time == false && time_bomb > 0)
+        {
+            time_bomb -= 1 * Time.deltaTime;
+			bomb_img.fillAmount = time_bomb / 10;
+		}
+
+		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = -0.5f;
         obj_spawn.transform.position = mousePosition;
         ob.mousePosition = mousePosition;
@@ -83,7 +94,7 @@ public class spawn_tower : MonoBehaviour
     }
     public void spawn_tower_mouse()
     {
-        if (mouse_spawn == true && ob.obj_spawn.GetComponent<SpriteRenderer>().sprite != null && basic.money >= price_tower[number_tower])
+        if (mouse_spawn == true && ob.obj_spawn.GetComponent<SpriteRenderer>().sprite != null && basic.money >= price_tower[number_tower] && down_spawn.tower == false)
         {
            mousePosition.z = 0;
             if (bomb == false)
@@ -92,7 +103,7 @@ public class spawn_tower : MonoBehaviour
             }
 			else
 			{
-                Vector2 vec = new Vector2(mousePosition.x, 5.12f);
+                Vector2 vec = new Vector2(mousePosition.x, 5.5f);
                 ob.object_for_spawn[number_tower].GetComponent<bombsc>().point_bomb = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Instantiate(ob.object_for_spawn[number_tower], vec, Quaternion.identity);
             }
