@@ -5,6 +5,7 @@ using UnityEngine;
 public class bombsc : MonoBehaviour
 {
     public Vector2 point_bomb;
+	public GameObject explosion;
 	public float speed = 0;
 	public bool explosion_b;
 	public void FixedUpdate()
@@ -24,6 +25,7 @@ public class bombsc : MonoBehaviour
 			{
 				collision.gameObject.GetComponent<movement_zombi>().damage_received(22);
 			}
+			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point_bomb: {x: -1.10206, y: 0.52262604}
+  explosion: {fileID: 4961439524806298837, guid: 6cdc5e796af402647983a8a431238e02, type: 3}
   speed: 0
   explosion_b: 0
 --- !u!61 &6185699484904346974

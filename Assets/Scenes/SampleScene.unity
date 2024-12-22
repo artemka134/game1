@@ -7024,7 +7024,7 @@ MonoBehaviour:
   - {fileID: 1284873161}
   - {fileID: 1454118925}
   zombie: {fileID: 3467709918257300996, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-  time_spawn: 111
+  time_spawn: 2
   second: 0
 --- !u!4 &1620000406
 Transform:
@@ -7142,7 +7142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17, y: 0.14400001}
   m_AnchorMax: {x: 0.29500002, y: 0.8905652}
-  m_AnchoredPosition: {x: 0, y: -0.064151764}
+  m_AnchoredPosition: {x: 0, y: -0.06415558}
   m_SizeDelta: {x: -0.6248002, y: 0.12829995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690503942
