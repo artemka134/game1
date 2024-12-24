@@ -16,6 +16,7 @@ public class tower : MonoBehaviour
 	public List<GameObject> position_zombie = new List<GameObject>();
 	public GameObject purpose;
 	public GameObject missile_obj;
+	public GameObject dead_anim;
 	//public void OnTriggerEnter2D(Collider2D collision)
 	//{
 	//	if (collision.gameObject.tag == "zombie" && collision.gameObject.GetComponent<movement_zombi>().spawn == true)
@@ -71,6 +72,7 @@ public class tower : MonoBehaviour
 					position_zombie[i].GetComponent<movement_zombi>().speed = 0.005f;
 				}
 			}
+			Instantiate(dead_anim, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}

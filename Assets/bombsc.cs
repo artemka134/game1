@@ -15,6 +15,7 @@ public class bombsc : MonoBehaviour
 		if (transform.position.y == point_bomb.y)
 		{
 			explosion_b = true;
+			Instantiate(explosion, transform.position, Quaternion.identity);
 		}
 	}
 	public void OnTriggerStay2D(Collider2D collision)
@@ -25,7 +26,6 @@ public class bombsc : MonoBehaviour
 			{
 				collision.gameObject.GetComponent<movement_zombi>().damage_received(22);
 			}
-			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}

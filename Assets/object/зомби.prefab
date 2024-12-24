@@ -124,7 +124,7 @@ MonoBehaviour:
   spawn: 0
   live: 1
   speed: 0.005
-  damage: 1
+  damage: 2
   health: 4
   point_movement: {fileID: 0}
   attack_tower: {fileID: 0}

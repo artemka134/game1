@@ -106,12 +106,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_health: 100
-  health: 5
+  health: 100
   second: 0
   recharge: 3
   position_zombie: []
   purpose: {fileID: 0}
   missile_obj: {fileID: 479308683475149182, guid: aa8aae2dc2465ad4a91c6dbed01a6f1c, type: 3}
+  dead_anim: {fileID: 5170509160776792542, guid: c6ae38f85964a8247bc9c8cddc038036, type: 3}
 --- !u!50 &3925137672589434085
 Rigidbody2D:
   serializedVersion: 4
@@ -345,8 +346,8 @@ Transform:
   m_GameObject: {fileID: 1924544485616927296}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0428, y: -2.6742, z: 0}
-  m_LocalScale: {x: 0.17660293, y: 0.10512079, z: 1}
+  m_LocalPosition: {x: 0.0472, y: -2.6607, z: 0}
+  m_LocalScale: {x: 0.16780207, y: 0.108663365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3953951435892066454}
@@ -505,8 +506,8 @@ Transform:
   m_GameObject: {fileID: 3497189061494764392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0894, y: -2.471, z: 0}
-  m_LocalScale: {x: 0.21167855, y: 0.21502677, z: 1}
+  m_LocalPosition: {x: -0.0269, y: -2.4809, z: 0}
+  m_LocalScale: {x: 0.2210171, y: 0.21762858, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3953951435892066454}

@@ -36,12 +36,27 @@ public class spawn_tower : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+		{
+            obj_spawn.GetComponent<SpriteRenderer>().sprite = null;
+            bomb = false;
+		}
         if (bomb_time == false && time_bomb > 0)
         {
             time_bomb -= 1 * Time.deltaTime;
 			bomb_img.fillAmount = time_bomb / 10;
 		}
-
+        if (mouse_spawn == false)
+		{
+            if (bomb == true)
+            {
+                coloring_obj_spawn(red_bomb);
+            }
+            else
+			{
+                coloring_obj_spawn(red);
+            }
+		}
 		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = -0.5f;
         obj_spawn.transform.position = mousePosition;
@@ -65,31 +80,25 @@ public class spawn_tower : MonoBehaviour
             if (down_spawn.tower == false && bomb == false)
             {
                 coloring_obj_spawn(green);
+                mouse_spawn = true;
             }
             if (bomb == true)
             {
                 coloring_obj_spawn(green_bomb);
+                mouse_spawn = true;
             }
-            mouse_spawn = true;
         }
     }
     void OnTriggerExit2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.name == "объект спавна")
         {
-            if (bomb == false)
-            {
-                coloring_obj_spawn(red);
-            }
-            else
-			{
-                coloring_obj_spawn(red_bomb);
-            }
             mouse_spawn = false;
         }
     }
     public void coloring_obj_spawn(Color color)
 	{
+        print(color);
         obj_spawn.GetComponent<SpriteRenderer>().color = color;
     }
     public void spawn_tower_mouse()

@@ -79,7 +79,10 @@ public class movement_zombi : MonoBehaviour
 		{
 			for (int i = 0; i < tower.Count; i++)
 			{
-				tower[i].GetComponent<tower>().position_zombie.Remove(gameObject);
+				if (tower[i] != null)
+				{
+					tower[i].GetComponent<tower>().position_zombie.Remove(gameObject);
+				}
 			}
 			live = false;
 			anim.SetBool("dead", true);
