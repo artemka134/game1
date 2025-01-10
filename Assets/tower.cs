@@ -28,6 +28,11 @@ public class tower : MonoBehaviour
 	{
 		transform.Find("Canvas/Image/текст").gameObject.GetComponent<TextMeshProUGUI>().text = health + "/" + max_health;
 		transform.Find("Canvas/Image").gameObject.GetComponent<Image>().fillAmount = health / max_health;
+		basic.tower.Add(gameObject);
+		if (basic.boost == true)
+		{
+			recharge *= 0.5f;
+		}
 	}
 	public void OnTriggerEnter2D(Collider2D other)
 	{
@@ -72,6 +77,7 @@ public class tower : MonoBehaviour
 					position_zombie[i].GetComponent<movement_zombi>().speed = 0.005f;
 				}
 			}
+			basic.tower.Remove(gameObject);
 			Instantiate(dead_anim, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}

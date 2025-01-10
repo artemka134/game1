@@ -48,7 +48,7 @@ public class spawn_tower : MonoBehaviour
 		}
         if (mouse_spawn == false)
 		{
-            if (bomb == true)
+            if (bomb == true && time_bomb >= 0)
             {
                 coloring_obj_spawn(red_bomb);
             }
@@ -56,22 +56,33 @@ public class spawn_tower : MonoBehaviour
 			{
                 coloring_obj_spawn(red);
             }
+		}
+        else if (mouse_spawn == true)
+        {
+			if (bomb == true && time_bomb <= 0)
+			{
+				coloring_obj_spawn(green_bomb);
+			}
+			else
+			{
+				coloring_obj_spawn(green);
+			}
 		}
 		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = -0.5f;
         obj_spawn.transform.position = mousePosition;
         ob.mousePosition = mousePosition;
-        if (basic.money < price_tower[number_tower])
+        if (basic.money < price_tower[number_tower] || time_bomb > 0)
         {
-            if (bomb == false)
+            if (bomb == false && basic.money < price_tower[number_tower])
             {
                 coloring_obj_spawn(red);
             }
-            else
-			{
+            if (basic.money < price_tower[number_tower] || time_bomb > 0 && bomb == true)
+            {
                 coloring_obj_spawn(red_bomb);
-			}
-		}
+            }
+        }
     }
     void OnTriggerStay2D(Collider2D collider2D)
     {
@@ -79,12 +90,10 @@ public class spawn_tower : MonoBehaviour
         {
             if (down_spawn.tower == false && bomb == false)
             {
-                coloring_obj_spawn(green);
                 mouse_spawn = true;
             }
-            if (bomb == true)
+            if (bomb == true && time_bomb <= 0)
             {
-                coloring_obj_spawn(green_bomb);
                 mouse_spawn = true;
             }
         }
@@ -98,7 +107,6 @@ public class spawn_tower : MonoBehaviour
     }
     public void coloring_obj_spawn(Color color)
 	{
-        print(color);
         obj_spawn.GetComponent<SpriteRenderer>().color = color;
     }
     public void spawn_tower_mouse()
@@ -110,11 +118,12 @@ public class spawn_tower : MonoBehaviour
             {
                 Instantiate(ob.object_for_spawn[number_tower], mousePosition, Quaternion.identity);
             }
-			else
+			if (time_bomb <= 0 && bomb == true)
 			{
                 Vector2 vec = new Vector2(mousePosition.x, 5.5f);
                 ob.object_for_spawn[number_tower].GetComponent<bombsc>().point_bomb = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Instantiate(ob.object_for_spawn[number_tower], vec, Quaternion.identity);
+                time_bomb = 10;
             }
            mousePosition.z = -0.5f;
            basic.money -= price_tower[number_tower];

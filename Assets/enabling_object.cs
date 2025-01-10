@@ -10,17 +10,32 @@ public class enabling_object : MonoBehaviour, IPointerEnterHandler, IPointerExit
 	public GameObject text_price;
 	public Color green;
 	public Color red;
+	public bool boost;
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		anim.SetBool("play", true);
 		anim.Play("panel", 0, 0);
-		if (basic.money >= spawn_tower.price_tower[spawn_tower.number_tower])
+		if (boost != true)
 		{
-			text_price.GetComponent<TextMeshProUGUI>().color = green;
+			if (basic.money >= spawn_tower.price_tower[spawn_tower.number_tower])
+			{
+				text_price.GetComponent<TextMeshProUGUI>().color = green;
+			}
+			else
+			{
+				text_price.GetComponent<TextMeshProUGUI>().color = red;
+			}
 		}
 		else
 		{
-			text_price.GetComponent<TextMeshProUGUI>().color = red;
+			if (basic.money >= 1000)
+			{
+				text_price.GetComponent<TextMeshProUGUI>().color = green;
+			}
+			else
+			{
+				text_price.GetComponent<TextMeshProUGUI>().color = red;
+			}
 		}
 	}
 	public void OnPointerExit(PointerEventData pointerEventData)

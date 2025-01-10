@@ -108,7 +108,7 @@ MonoBehaviour:
   max_health: 100
   health: 100
   second: 0
-  recharge: 3
+  recharge: 10
   position_zombie: []
   purpose: {fileID: 0}
   missile_obj: {fileID: 479308683475149182, guid: aa8aae2dc2465ad4a91c6dbed01a6f1c, type: 3}

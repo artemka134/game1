@@ -125,7 +125,7 @@ MonoBehaviour:
   live: 1
   speed: 0.005
   damage: 2
-  health: 4
+  health: 5
   point_movement: {fileID: 0}
   attack_tower: {fileID: 0}
   tower: []
