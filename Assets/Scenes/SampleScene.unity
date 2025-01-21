@@ -154,10 +154,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1690503941}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.19379325, y: 0.22355096}
-  m_AnchorMax: {x: 0.8062067, y: 0.8071736}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: 0.6380997, y: 0.3600998}
+  m_AnchorMin: {x: 0.2673235, y: 0.14120285}
+  m_AnchorMax: {x: 0.73267645, y: 0.834623}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0.2586, y: 0.5374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406565
 MonoBehaviour:
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8be7b45f322c3714ebc29b3dc35737aa, type: 3}
+  m_Sprite: {fileID: -736246922, guid: 7b1f5a88d4dd2244c942dcc8667ce7b0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3789,7 +3789,7 @@ Transform:
   m_GameObject: {fileID: 726237295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0, w: -1}
-  m_LocalPosition: {x: -1.91, y: -1.32, z: 7.9041443}
+  m_LocalPosition: {x: -1.91, y: -1.32, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6555,8 +6555,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 3.764706, y: 5.882353}
+    newSize: {x: 3.764706, y: 5.882353}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -6829,8 +6829,8 @@ Transform:
   m_GameObject: {fileID: 1421550105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0699, y: -5.7345, z: 0}
-  m_LocalScale: {x: 3.8743129, y: 1.3229767, z: 1}
+  m_LocalPosition: {x: -0.3112, y: -5.7345, z: 0}
+  m_LocalScale: {x: 5.2600484, y: 1.3229767, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7737,7 +7737,7 @@ MonoBehaviour:
   - {fileID: 1284873161}
   - {fileID: 1454118925}
   zombie: {fileID: 3467709918257300996, guid: 1cccce457455ba94d8d8e6dfe8d80500, type: 3}
-  time_spawn: 1111
+  time_spawn: 2
   second: 0
 --- !u!4 &1620000406
 Transform:
@@ -7929,7 +7929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.74290574, b: 0.46079564, a: 0.14901961}
+  m_Color: {r: 0.754717, g: 0.63653, b: 0.3737985, a: 0.14901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8887,8 +8887,8 @@ Transform:
   m_GameObject: {fileID: 1850838910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0191, y: 0.9866, z: 0.16552137}
-  m_LocalScale: {x: 13.679492, y: 5.094377, z: 1}
+  m_LocalPosition: {x: 0.0191, y: 1.0089, z: 0.16552137}
+  m_LocalScale: {x: 13.679492, y: 4.558868, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8916,7 +8916,7 @@ MonoBehaviour:
   red_bomb: {r: 0.9529412, g: 0.12156863, b: 0.20784314, a: 0.36078432}
   spawn_bomb: {x: 0, y: 0}
   tower_textur:
-  - {fileID: 21300000, guid: 8be7b45f322c3714ebc29b3dc35737aa, type: 3}
+  - {fileID: -736246922, guid: 7b1f5a88d4dd2244c942dcc8667ce7b0, type: 3}
   - {fileID: -2413806693520163455, guid: f58494f0379eb4e4a9840d274d65a0e5, type: 3}
 --- !u!61 &1850838915
 BoxCollider2D:

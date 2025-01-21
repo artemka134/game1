@@ -48,7 +48,7 @@ public class spawn_tower : MonoBehaviour
 		}
         if (mouse_spawn == false)
 		{
-            if (bomb == true && time_bomb >= 0)
+            if (bomb == true && time_bomb > 0)
             {
                 coloring_obj_spawn(red_bomb);
             }
@@ -78,7 +78,7 @@ public class spawn_tower : MonoBehaviour
             {
                 coloring_obj_spawn(red);
             }
-            if (basic.money < price_tower[number_tower] || time_bomb > 0 && bomb == true)
+            if ((basic.money < price_tower[number_tower] || time_bomb > 0) && bomb == true)
             {
                 coloring_obj_spawn(red_bomb);
             }
@@ -103,6 +103,7 @@ public class spawn_tower : MonoBehaviour
         if (collider2D.gameObject.name == "объект спавна")
         {
             mouse_spawn = false;
+            if (bomb == true)
         }
     }
     public void coloring_obj_spawn(Color color)

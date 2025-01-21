@@ -15,8 +15,8 @@ public class tower : MonoBehaviour
 	public float recharge;
 	public List<GameObject> position_zombie = new List<GameObject>();
 	public GameObject purpose;
-	public GameObject missile_obj;
 	public GameObject dead_anim;
+	public GameObject cannon;
 	//public void OnTriggerEnter2D(Collider2D collision)
 	//{
 	//	if (collision.gameObject.tag == "zombie" && collision.gameObject.GetComponent<movement_zombi>().spawn == true)
@@ -28,6 +28,7 @@ public class tower : MonoBehaviour
 	{
 		transform.Find("Canvas/Image/текст").gameObject.GetComponent<TextMeshProUGUI>().text = health + "/" + max_health;
 		transform.Find("Canvas/Image").gameObject.GetComponent<Image>().fillAmount = health / max_health;
+		cannon = transform.Find("орудие").gameObject;
 		basic.tower.Add(gameObject);
 		if (basic.boost == true)
 		{
@@ -59,7 +60,6 @@ public class tower : MonoBehaviour
 		{
 			second = 0;
 			shot();
-
 		}
 	}
 	public void health_check()
@@ -123,10 +123,8 @@ public class tower : MonoBehaviour
 						}
 					}
 				}
-					purpose = position_zombie[a];
-					missile_obj.GetComponent<missile>().purpose = purpose.transform.position;
-					missile_obj.GetComponent<missile>().obj_attack = purpose;
-					Instantiate(missile_obj, transform.position, missile_obj.transform.rotation);
+				cannon.GetComponent<Animator>().SetBool("shot", true);
+				cannon.GetComponent<cannon_shot>().purpose = position_zombie[a];
 			}
 			}
 		}
