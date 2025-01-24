@@ -14,7 +14,7 @@ public class spawn_tower : MonoBehaviour
     public GameObject[] object_for_spawn = {};
     public Image bomb_img;
     public static int number_tower;
-    public static float[] price_tower = new float[] {10, 100};
+    public static float[] price_tower = new float[] {10, 100, 50};
     public static float time_bomb = 10;
     public Color green, red;
     public Color green_bomb, red_bomb;
@@ -48,7 +48,7 @@ public class spawn_tower : MonoBehaviour
 		}
         if (mouse_spawn == false)
 		{
-            if (bomb == true && time_bomb > 0)
+            if (bomb == true)
             {
                 coloring_obj_spawn(red_bomb);
             }
@@ -59,9 +59,16 @@ public class spawn_tower : MonoBehaviour
 		}
         else if (mouse_spawn == true)
         {
-			if (bomb == true && time_bomb <= 0)
+			if (bomb == true)
 			{
-				coloring_obj_spawn(green_bomb);
+                if (time_bomb <= 0)
+                {
+                    coloring_obj_spawn(green_bomb);
+                }
+                else
+				{
+                    coloring_obj_spawn(red_bomb);
+                }
 			}
 			else
 			{
@@ -103,7 +110,6 @@ public class spawn_tower : MonoBehaviour
         if (collider2D.gameObject.name == "объект спавна")
         {
             mouse_spawn = false;
-            if (bomb == true)
         }
     }
     public void coloring_obj_spawn(Color color)
@@ -136,8 +142,16 @@ public class spawn_tower : MonoBehaviour
 	{
         number_tower = 0;
         obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];
-        obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.687186f, 5.140042f);
+        obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.778137f, 5.777186f);
         obj_spawn.transform.localScale = new Vector3(0.358511418f, 0.349489331f, 1);
+        bomb = false;
+    }
+    public void select_an_object_town_lvl2()
+    {
+        number_tower = 2;
+        obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];
+        obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.805998f, 6.285462f);
+        obj_spawn.transform.localScale = new Vector3(0.3899545f, 0.3501035f, 1);
         bomb = false;
     }
     public void select_an_object_bomb()
