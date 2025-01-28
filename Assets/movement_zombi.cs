@@ -59,14 +59,14 @@ public class movement_zombi : MonoBehaviour
 	}
 	public void attack()
 	{
-		if (attack_tower != null)
+		if (attack_tower != null && live != false)
 		{
 			attack_tower.transform.gameObject.GetComponent<tower>().health -= damage;
 			attack_tower.transform.gameObject.GetComponent<tower>().health_check();
 		}
 		else
 		{
-			attack_tower = null;
+			//attack_tower = null;
 			anim.SetBool("attack", false);
 		}
 	}

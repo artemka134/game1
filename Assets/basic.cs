@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class basic : MonoBehaviour
 {
 	public static basic bs = new basic();
-	public static float money = 100;
+	public static float money = 500;
 	public static float score = 0;
 	public static float time_boost = 10;
 	public static float boost_time = 30;
@@ -25,6 +25,7 @@ public class basic : MonoBehaviour
 		bs.anim_money = anim_money;
 		bs.score_text = score_text;
 		bs.anim_score = anim_score;
+		//bs.money_text.text = money.ToString("0")+"$";
 	}
 	public void Update()
 	{
@@ -51,7 +52,7 @@ public class basic : MonoBehaviour
 	}
 	public void profit_check()
 	{
-		money_text.text = money.ToString() + "$";
+		money_text.text = money.ToString("0") + "$";
 		anim_money.SetBool("play", true);
 		anim_money.Play("anim", 0, 0);
 	}

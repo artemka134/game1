@@ -14,7 +14,7 @@ public class spawn_tower : MonoBehaviour
     public GameObject[] object_for_spawn = {};
     public Image bomb_img;
     public static int number_tower;
-    public static float[] price_tower = new float[] {10, 100, 50};
+    public static float[] price_tower = new float[] {10, 200, 50, 150};
     public static float time_bomb = 10;
     public Color green, red;
     public Color green_bomb, red_bomb;
@@ -151,6 +151,14 @@ public class spawn_tower : MonoBehaviour
         number_tower = 2;
         obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];
         obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.805998f, 6.285462f);
+        obj_spawn.transform.localScale = new Vector3(0.3899545f, 0.3501035f, 1);
+        bomb = false;
+    }
+    public void select_an_object_town_lvl3()
+    {
+        number_tower = 3;
+        obj_spawn.GetComponent<SpriteRenderer>().sprite = tower_textur[number_tower];
+        obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.972252f, 6.917356f);
         obj_spawn.transform.localScale = new Vector3(0.3899545f, 0.3501035f, 1);
         bomb = false;
     }
