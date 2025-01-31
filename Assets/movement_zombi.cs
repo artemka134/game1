@@ -11,6 +11,8 @@ public class movement_zombi : MonoBehaviour
 	public float speed = 0.004f;
 	public float damage = 1;
 	public float health;
+	public float profit;
+	public float bonus;
 	public GameObject point_movement;
 	public GameObject attack_tower = null;
 	public List<GameObject> tower = new List<GameObject>();
@@ -66,7 +68,7 @@ public class movement_zombi : MonoBehaviour
 		}
 		else
 		{
-			//attack_tower = null;
+			
 			anim.SetBool("attack", false);
 		}
 	}
@@ -88,10 +90,11 @@ public class movement_zombi : MonoBehaviour
 			anim.SetBool("dead", true);
 			speed = 0;
 			gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "dead_zombie";
-			basic.money += 2;
-			basic.score += 1;
+			basic.money += profit;
+			basic.score += bonus;
 			basic.bs.profit_check();
 			basic.bs.score_check();
+			spawn_zombie.decrease_time();
 		}
 	}
 	public void dead()

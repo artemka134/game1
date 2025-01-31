@@ -14,7 +14,7 @@ public class spawn_tower : MonoBehaviour
     public GameObject[] object_for_spawn = {};
     public Image bomb_img;
     public static int number_tower;
-    public static float[] price_tower = new float[] {10, 200, 50, 150};
+    public static float[] price_tower = new float[] {10, 100, 30, 150};
     public static float time_bomb = 10;
     public Color green, red;
     public Color green_bomb, red_bomb;
