@@ -11,7 +11,6 @@ public class missile : MonoBehaviour
 	public GameObject obj_attack;
 	public void Start()
 	{
-		basic.missle.Add(gameObject);
 		Vector2 targ = purpose;
 
 		Vector2 objectPos = transform.position;
@@ -28,7 +27,6 @@ public class missile : MonoBehaviour
 		if (Vector2.Distance(transform.position, purpose) == 0)
 		{
 			Destroy(gameObject);
-			basic.missle.Remove(gameObject);
 		}
 	}
 	public void OnTriggerStay2D(Collider2D collision)
@@ -38,7 +36,6 @@ public class missile : MonoBehaviour
 			if (collision.gameObject.GetComponent<movement_zombi>().live == true)
 			{
 				collision.gameObject.GetComponent<movement_zombi>().damage_received(damage_missile);
-				basic.missle.Remove(gameObject);
 				Destroy(gameObject);
 			}
 			}

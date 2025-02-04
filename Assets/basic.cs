@@ -12,7 +12,6 @@ public class basic : MonoBehaviour
 	public static float time_boost = 10;
 	public static float boost_time = 30;
 	public static bool boost = false;
-	public static List<GameObject> missle = new List<GameObject>();
 	public static List<GameObject> tower = new List<GameObject>();
 	public Image boost_img, boost_img2;
 	public TextMeshProUGUI money_text;

@@ -69,7 +69,7 @@ public class spawn_zombie : MonoBehaviour
 		{
 			time_spawn -= decreasetm;
 			decreasetm -= 0.0001f;
-			print(time_spawn);
+			//print(time_spawn);
 		}
 	}
 }

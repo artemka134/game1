@@ -22,9 +22,9 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1093318752, guid: 867954f71a7df9147a56c2fd4caad9eb, type: 3}
-    - time: 0.2
+    - time: 0.15
       value: {fileID: -865624284, guid: 867954f71a7df9147a56c2fd4caad9eb, type: 3}
-    - time: 0.43333334
+    - time: 0.33333334
       value: {fileID: 1540001080, guid: 867954f71a7df9147a56c2fd4caad9eb, type: 3}
     - time: 0.56666666
       value: {fileID: 1321032110, guid: 867954f71a7df9147a56c2fd4caad9eb, type: 3}
@@ -88,14 +88,21 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.43333334
+  - time: 0
+    functionName: start_anim
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
     functionName: shot_cannon
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.95
+  - time: 1.8333334
     functionName: end_shot
     data: 
     objectReferenceParameter: {fileID: 0}

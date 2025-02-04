@@ -112,11 +112,22 @@ public class tower : MonoBehaviour
 			if (position_zombie[0].GetComponent<movement_zombi>().spawn != false)
 			{
 				int a = 0;
-				if (basic.missle.Count > 0 && position_zombie.Count > 1)
+				if (basic.tower.Count > 1 && position_zombie.Count > 1)
 				{
-					for (int i = 0; i < basic.missle.Count; i++)
+					for (int i = 0; i < basic.tower.Count; i++)
 					{
-						if (basic.missle[i].GetComponent<missile>().obj_attack == position_zombie[0] && position_zombie[0].GetComponent<movement_zombi>().health == 1)
+						if (basic.tower[i] == gameObject)
+						{
+							if ((basic.tower.Count - 1) == i)
+							{
+								break;
+							}
+							else
+							{
+								i++;
+							}
+						}
+						if (basic.tower[i].GetComponent<tower>().cannon.GetComponent<cannon_shot>().shot = true && basic.tower[i].GetComponent<tower>().purpose == purpose && position_zombie[0].GetComponent<movement_zombi>().health == 1)
 						{
 							a++;
 							break;
@@ -125,6 +136,7 @@ public class tower : MonoBehaviour
 				}
 				cannon.GetComponent<Animator>().SetBool("shot", true);
 				cannon.GetComponent<cannon_shot>().purpose = position_zombie[a];
+				purpose = position_zombie[a];
 			}
 			}
 		}
