@@ -135,6 +135,7 @@ public class tower : MonoBehaviour
 					}
 				}
 				cannon.GetComponent<Animator>().SetBool("shot", true);
+				cannon.GetComponent<cannon_shot>().shot = true;
 				cannon.GetComponent<cannon_shot>().purpose = position_zombie[a];
 				purpose = position_zombie[a];
 			}

@@ -24,8 +24,9 @@ public class spawn_tower : MonoBehaviour
     public static bool bomb = false;
 	public static bool bomb_time = false;
 	public Sprite[] tower_textur;
+    public AudioSource sound_buildings;
 
-    private void Start()
+	private void Start()
     {
         ob.object_for_spawn = object_for_spawn;
         ob.obj_spawn = obj_spawn;
@@ -33,6 +34,7 @@ public class spawn_tower : MonoBehaviour
         ob.red = red;
         ob.green_bomb = green_bomb;
         ob.red_bomb = red_bomb;
+        ob.sound_buildings = sound_buildings;
     }
     void Update()
     {
@@ -124,7 +126,8 @@ public class spawn_tower : MonoBehaviour
             if (bomb == false)
             {
                 Instantiate(ob.object_for_spawn[number_tower], mousePosition, Quaternion.identity);
-            }
+                sound_buildings.Play();
+			}
 			if (time_bomb <= 0 && bomb == true)
 			{
                 Vector2 vec = new Vector2(mousePosition.x, 5.5f);

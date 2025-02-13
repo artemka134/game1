@@ -496,6 +496,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   purpose: {fileID: 0}
   missile_obj: {fileID: 479308683475149182, guid: aa8aae2dc2465ad4a91c6dbed01a6f1c, type: 3}
+  shot: 0
 --- !u!95 &6576169933868536337
 Animator:
   serializedVersion: 5

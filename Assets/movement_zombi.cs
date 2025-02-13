@@ -17,10 +17,11 @@ public class movement_zombi : MonoBehaviour
 	public GameObject attack_tower = null;
 	public List<GameObject> tower = new List<GameObject>();
 	public Animator anim;
-
+	public AudioSource arrival;
 	public void Start()
 	{
 		anim = transform.gameObject.GetComponent<Animator>();
+		arrival = transform.gameObject.GetComponent<AudioSource>();
 	}
 	public void FixedUpdate()
 	{
@@ -77,6 +78,7 @@ public class movement_zombi : MonoBehaviour
 		health -= damage;
 		anim.SetBool("damage", true);
 		anim.Play("damage", 1, 0);
+		arrival.Play();
 		if (health <= 0)
 		{
 			for (int i = 0; i < tower.Count; i++)
