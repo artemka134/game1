@@ -9,7 +9,7 @@ public class basic : MonoBehaviour
 	public static basic bs = new basic();
 	public static float money = 70;
 	public static float score = 0;
-	public static float time_boost = 10;
+	public static float time_boost = 0;
 	public static float boost_time = 30;
 	public static bool boost = false;
 	public static List<GameObject> tower = new List<GameObject>();
@@ -41,7 +41,7 @@ public class basic : MonoBehaviour
 		if (boost_time <= 0 && boost == true)
 		{
 			boost_time = 30;
-			time_boost = 10;
+			time_boost = 60;
 			boost = false;
 			for (int i = 0; i < tower.Count; i++)
 			{
@@ -63,9 +63,9 @@ public class basic : MonoBehaviour
 	}
 	public void boost_void()
 	{
-		if (money >= 1000 && time_boost <= 0)
+		if (money >= 70 && time_boost <= 0)
 		{
-			money -= 1000;
+			money -= 70;
 			boost = true;
 			for (int i = 0; i < tower.Count; i++)
 			{

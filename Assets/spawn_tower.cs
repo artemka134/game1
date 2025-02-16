@@ -12,10 +12,11 @@ public class spawn_tower : MonoBehaviour
 
     public GameObject obj_spawn;
     public GameObject[] object_for_spawn = {};
-    public Image bomb_img;
+    public GameObject cancellation_button;
+	public Image bomb_img;
     public static int number_tower;
-    public static float[] price_tower = new float[] {10, 100, 30, 150};
-    public static float time_bomb = 10;
+    public static float[] price_tower = new float[] {10, 50, 30, 80};
+    public static float time_bomb = 0;
     public Color green, red;
     public Color green_bomb, red_bomb;
     Vector3 mousePosition;
@@ -40,8 +41,7 @@ public class spawn_tower : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
-            obj_spawn.GetComponent<SpriteRenderer>().sprite = null;
-            bomb = false;
+            cancellation();
 		}
         if (bomb_time == false && time_bomb > 0)
         {
@@ -133,7 +133,7 @@ public class spawn_tower : MonoBehaviour
                 Vector2 vec = new Vector2(mousePosition.x, 5.5f);
                 ob.object_for_spawn[number_tower].GetComponent<bombsc>().point_bomb = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Instantiate(ob.object_for_spawn[number_tower], vec, Quaternion.identity);
-                time_bomb = 10;
+                time_bomb = 15;
             }
            mousePosition.z = -0.5f;
            basic.money -= price_tower[number_tower];
@@ -148,6 +148,7 @@ public class spawn_tower : MonoBehaviour
         obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.778137f, 5.777186f);
         obj_spawn.transform.localScale = new Vector3(0.358511418f, 0.349489331f, 1);
         bomb = false;
+        cancellation_button.SetActive(true);
     }
     public void select_an_object_town_lvl2()
     {
@@ -156,7 +157,8 @@ public class spawn_tower : MonoBehaviour
         obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.805998f, 6.285462f);
         obj_spawn.transform.localScale = new Vector3(0.3899545f, 0.3501035f, 1);
         bomb = false;
-    }
+		cancellation_button.SetActive(true);
+	}
     public void select_an_object_town_lvl3()
     {
         number_tower = 3;
@@ -164,7 +166,8 @@ public class spawn_tower : MonoBehaviour
         obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(3.972252f, 6.917356f);
         obj_spawn.transform.localScale = new Vector3(0.3899545f, 0.3501035f, 1);
         bomb = false;
-    }
+		cancellation_button.SetActive(true);
+	}
     public void select_an_object_bomb()
 	{
         number_tower = 1;
@@ -172,5 +175,12 @@ public class spawn_tower : MonoBehaviour
         obj_spawn.GetComponent<BoxCollider2D>().size = new Vector2(1.026046f, 1.026165f);
         obj_spawn.transform.localScale = new Vector3(3.45649648f, 1.98367476f, 1);
         bomb = true;
-    }
+		cancellation_button.SetActive(true);
+	}
+    public void cancellation()
+    {
+		obj_spawn.GetComponent<SpriteRenderer>().sprite = null;
+		bomb = false;
+        cancellation_button.SetActive(false);
+	}
 }

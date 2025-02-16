@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class spawn_zombie : MonoBehaviour
@@ -7,13 +8,25 @@ public class spawn_zombie : MonoBehaviour
     public GameObject[] beginning_point = new GameObject[8];
     public GameObject[] end_point = new GameObject[13];
 	public GameObject zombie, zombie2, zombie3;
-    public static float time_spawn = 4f;
+	public GameObject beginning_obj;
+	public TextMeshProUGUI beginning_text;
+	public static float time_spawn = 4f;
 	public static float decreasetm = 0.028f;
 	public float second;
+	public float beginning_game_time = 15;
 	public static spawn_zombie sz = new spawn_zombie();
+	public bool beginning = false;
 	public void Update()
 	{
-		second += 1 * Time.deltaTime;
+		beginning_text.text = "До спанва зомби осталось " + beginning_game_time.ToString("0") + " секунд";
+		if (beginning_game_time < 0)
+		{
+			second += 1 * Time.deltaTime;
+		}
+		if (beginning_game_time > 0)
+		{
+			beginning_game_time -= 1 * Time.deltaTime;
+		}
 		if (second >= time_spawn)
 		{
 			GameObject spawn_point;
@@ -61,11 +74,16 @@ public class spawn_zombie : MonoBehaviour
 			}
 			second = 0;
 		}
-		
+		if (beginning_game_time < 0 && beginning == false)
+		{
+			beginning = true;
+			beginning_obj.SetActive(false);
+			second = 4;
+		}
 	}
 	public static void decrease_time()
 	{
-		if (time_spawn >= 0.4f)
+		if (time_spawn >= 0.7f)
 		{
 			time_spawn -= decreasetm;
 			decreasetm -= 0.0001f;

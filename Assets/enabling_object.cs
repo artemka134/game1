@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using Unity.VisualScripting;
+using System;
 
 public class enabling_object : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -11,13 +13,14 @@ public class enabling_object : MonoBehaviour, IPointerEnterHandler, IPointerExit
 	public Color green;
 	public Color red;
 	public bool boost;
+	public float price;
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		anim.SetBool("play", true);
 		anim.Play("panel", 0, 0);
 		if (boost != true)
 		{
-			if (basic.money >= spawn_tower.price_tower[spawn_tower.number_tower])
+			if (basic.money >= price)
 			{
 				text_price.GetComponent<TextMeshProUGUI>().color = green;
 			}
@@ -28,7 +31,7 @@ public class enabling_object : MonoBehaviour, IPointerEnterHandler, IPointerExit
 		}
 		else
 		{
-			if (basic.money >= 1000)
+			if (basic.money >= 140)
 			{
 				text_price.GetComponent<TextMeshProUGUI>().color = green;
 			}
