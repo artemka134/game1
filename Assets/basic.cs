@@ -63,9 +63,9 @@ public class basic : MonoBehaviour
 	}
 	public void boost_void()
 	{
-		if (money >= 70 && time_boost <= 0)
+		if (money >= 40 && time_boost <= 0 && tower.Count != 0)
 		{
-			money -= 70;
+			money -= 40;
 			boost = true;
 			for (int i = 0; i < tower.Count; i++)
 			{
