@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spawn_zombie : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class spawn_zombie : MonoBehaviour
 	public static float time_spawn = 4f;
 	public static float decreasetm = 0.028f;
 	public float second;
-	public float beginning_game_time = 15;
+	public float beginning_game_time = 16;
 	public static spawn_zombie sz = new spawn_zombie();
 	public bool beginning = false;
 	public void Update()
@@ -89,5 +90,9 @@ public class spawn_zombie : MonoBehaviour
 			decreasetm -= 0.0001f;
 			//print(time_spawn);
 		}
+	}
+	public void menu()
+	{
+		SceneManager.LoadScene(0);
 	}
 }

@@ -73,4 +73,12 @@ public class basic : MonoBehaviour
 			}
 		}
 	}
+
+}
+namespace YG
+{
+	public partial class SavesYG
+	{
+		public float score = 0;
+	}
 }
