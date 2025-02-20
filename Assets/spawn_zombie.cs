@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class spawn_zombie : MonoBehaviour
 {
@@ -93,6 +94,8 @@ public class spawn_zombie : MonoBehaviour
 	}
 	public void menu()
 	{
+		//YG2.InterstitialAdvShow();
 		SceneManager.LoadScene(0);
+		
 	}
 }

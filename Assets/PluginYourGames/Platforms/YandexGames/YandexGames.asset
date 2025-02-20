@@ -23,7 +23,7 @@ MonoBehaviour:
     saveLocal: 0
     saveCloud: 1
     selectWebGLTemplate: 1
-    runInBackground: 0
+    runInBackground: 1
     enableExceptions: 2
     compressionFormat: 0
     decompressionFallback: 0

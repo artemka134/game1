@@ -1,0 +1,3 @@
+Build path: D:/project/build
+Build number: 6
+PluginYG version: 2.0031

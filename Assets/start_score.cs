@@ -10,7 +10,6 @@ public class start_score : MonoBehaviour
 
 	public void Start()
 	{
-		text.text = "Ваш рекорд: " + YG2.saves.score.ToString("0") + " очков";
-		
+		text.text = "Ваш рекорд по очкам: " + YG2.saves.score.ToString("0");	
 	}
 }

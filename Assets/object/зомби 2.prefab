@@ -124,11 +124,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn: 0
   live: 1
-  speed: 0.0045
+  speed: 0.0047
   damage: 4
   health: 10
   profit: 5
-  bonus: 10
+  bonus: 3
   point_movement: {fileID: 0}
   attack_tower: {fileID: 0}
   tower: []

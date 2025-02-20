@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24454217, y: 0.116000004}
   m_AnchorMax: {x: 0.75545776, y: 0.83500004}
-  m_AnchoredPosition: {x: 0.000019073486, y: 0}
+  m_AnchoredPosition: {x: 0.000022888184, y: 0}
   m_SizeDelta: {x: -0.38279998, y: 0.61389995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406565
@@ -1438,7 +1438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24300002, y: 0.14120285}
   m_AnchorMax: {x: 0.757, y: 0.88945884}
-  m_AnchoredPosition: {x: -0.000011444092, y: -0.6019974}
+  m_AnchoredPosition: {x: -0.000015258789, y: -0.6019974}
   m_SizeDelta: {x: -1.4748, y: -0.013100028}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208185645
@@ -5237,7 +5237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3325, y: 0.10444443}
   m_AnchorMax: {x: 0.5125001, y: 0.16888888}
-  m_AnchoredPosition: {x: 0.16156006, y: 0.199646}
+  m_AnchoredPosition: {x: 0.16156006, y: 0.19970703}
   m_SizeDelta: {x: 0.32310486, y: -0.22669983}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!114 &848542728
@@ -6968,7 +6968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.43050003, y: 0.10444443}
   m_AnchorMax: {x: 0.61125004, y: 0.16888888}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.199646}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.19970703}
   m_SizeDelta: {x: -0.67689514, y: -0.22669983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1272115290
@@ -7168,7 +7168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6866667}
   m_AnchorMax: {x: 0.045, y: 0.76000005}
-  m_AnchoredPosition: {x: 0.08093262, y: 0.2000122}
+  m_AnchoredPosition: {x: 0.08105469, y: 0.2000122}
   m_SizeDelta: {x: 0.1618042, y: 0.2038002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274556126
@@ -9356,7 +9356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24300002, y: 0.09028518}
   m_AnchorMax: {x: 0.757, y: 0.8895412}
-  m_AnchoredPosition: {x: 0.000045776367, y: -0.015898705}
+  m_AnchoredPosition: {x: 0.000045776367, y: -0.015899658}
   m_SizeDelta: {x: -0.0000095367, y: 0.0318}
   m_Pivot: {x: 0.5, y: 0.4999997}
 --- !u!114 &1618774485
@@ -11575,6 +11575,7 @@ GameObject:
   - component: {fileID: 1890528033}
   - component: {fileID: 1890528032}
   - component: {fileID: 1890528031}
+  - component: {fileID: 1890528034}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -11646,9 +11647,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1620000405}
-        m_TargetAssemblyTypeName: spawn_zombie, Assembly-CSharp
-        m_MethodName: menu
+      - m_Target: {fileID: 1890528034}
+        m_TargetAssemblyTypeName: YG.EventsYG2, Assembly-CSharp
+        m_MethodName: _InterstitialAdvShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11696,6 +11697,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890528029}
   m_CullTransparentMesh: 1
+--- !u!114 &1890528034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890528029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341f31e995335eb49bcb5f79b009a4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1620000405}
+          m_TargetAssemblyTypeName: spawn_zombie, Assembly-CSharp
+          m_MethodName: menu
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1911212469
 GameObject:
   m_ObjectHideFlags: 0
@@ -12106,7 +12136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.53625005, y: 0.10444443}
   m_AnchorMax: {x: 0.7175001, y: 0.16888888}
-  m_AnchoredPosition: {x: 0.2999878, y: 0.199646}
+  m_AnchoredPosition: {x: 0.2999878, y: 0.19970703}
   m_SizeDelta: {x: -0.67689514, y: -0.22669983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1938902489

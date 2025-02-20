@@ -43,6 +43,10 @@ public class spawn_tower : MonoBehaviour
 		{
             cancellation();
 		}
+        if (Input.GetMouseButton(1))
+        {
+			cancellation();
+		}
         if (bomb_time == false && time_bomb > 0)
         {
             time_bomb -= 1 * Time.deltaTime;

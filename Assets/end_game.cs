@@ -14,7 +14,7 @@ public class end_game : MonoBehaviour
 		if (other.gameObject.tag == "zombie" && a == false)
 		{
 			end_game_obj.SetActive(true);
-			end_game_text.text = "Вы проиграли! Ваш счёт составил: " + basic.score + " очков";
+			end_game_text.text = "Вы проиграли! Ваш счёт: " + basic.score;
 			a = true;
 			YG2.saves.score = basic.score;
 			YG2.SaveProgress();

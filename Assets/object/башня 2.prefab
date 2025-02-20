@@ -305,7 +305,7 @@ MonoBehaviour:
   max_health: 100
   health: 100
   second: 0
-  recharge: 5
+  recharge: 6
   position_zombie: []
   purpose: {fileID: 0}
   dead_anim: {fileID: 5170509160776792542, guid: c6ae38f85964a8247bc9c8cddc038036, type: 3}
