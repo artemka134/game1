@@ -31,7 +31,7 @@ public class enabling_object : MonoBehaviour, IPointerEnterHandler, IPointerExit
 		}
 		else
 		{
-			if (basic.money >= 140)
+			if (basic.money >= 40)
 			{
 				text_price.GetComponent<TextMeshProUGUI>().color = green;
 			}

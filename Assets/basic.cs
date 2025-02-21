@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class basic : MonoBehaviour
 {
 	public static basic bs = new basic();
-	public static float money = 70;
+	public static float money = 700;
 	public static float score = 0;
 	public static float time_boost = 0;
 	public static float boost_time = 30;
@@ -31,7 +31,8 @@ public class basic : MonoBehaviour
 		if (time_boost > 0 && boost == false)
 		{
 			time_boost -= 1 * Time.deltaTime;
-			boost_img.fillAmount = time_boost / 10;
+			boost_img.fillAmount = time_boost / 40;
+			print(true);
 		}
 		if (boost_time > 0 && boost == true)
 		{
@@ -41,7 +42,7 @@ public class basic : MonoBehaviour
 		if (boost_time <= 0 && boost == true)
 		{
 			boost_time = 30;
-			time_boost = 60;
+			time_boost = 40;
 			boost = false;
 			for (int i = 0; i < tower.Count; i++)
 			{
@@ -67,6 +68,7 @@ public class basic : MonoBehaviour
 		{
 			money -= 40;
 			boost = true;
+			profit_check();
 			for (int i = 0; i < tower.Count; i++)
 			{
 				tower[i].GetComponent<tower>().recharge *= 0.5f;

@@ -15,7 +15,7 @@ public class spawn_tower : MonoBehaviour
     public GameObject cancellation_button;
 	public Image bomb_img;
     public static int number_tower;
-    public static float[] price_tower = new float[] {10, 50, 30, 80};
+    public static float[] price_tower = new float[] {10, 50, 30, 60};
     public static float time_bomb = 0;
     public Color green, red;
     public Color green_bomb, red_bomb;
