@@ -16,8 +16,11 @@ public class end_game : MonoBehaviour
 			end_game_obj.SetActive(true);
 			end_game_text.text = "Вы проиграли! Ваш счёт: " + basic.score;
 			a = true;
-			YG2.saves.score = basic.score;
-			YG2.SaveProgress();
+			if (basic.score > YG2.saves.score)
+			{
+				YG2.saves.score = basic.score;
+				YG2.SaveProgress();
+			}
 		}
 	}
 }
