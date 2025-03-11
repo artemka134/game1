@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using YG;
 
 public class spawn_zombie : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class spawn_zombie : MonoBehaviour
 	public bool beginning = false;
 	public void Update()
 	{
-		beginning_text.text = "До спанва зомби осталось " + beginning_game_time.ToString("0") + " секунд";
+		beginning_text.text = "Time left until zombie spawn " + beginning_game_time.ToString("0") + " seconds";
 		if (beginning_game_time < 0)
 		{
 			second += 1 * Time.deltaTime;
@@ -94,7 +93,6 @@ public class spawn_zombie : MonoBehaviour
 	}
 	public void menu()
 	{
-		//YG2.InterstitialAdvShow();
 		SceneManager.LoadScene(0);
 		
 	}

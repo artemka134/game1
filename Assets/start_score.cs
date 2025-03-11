@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using YG;
 
 public class start_score : MonoBehaviour
 {
@@ -10,6 +9,6 @@ public class start_score : MonoBehaviour
 
 	public void Start()
 	{
-		text.text = "Ваш рекорд по очкам: " + YG2.saves.score.ToString("0");	
+		text.text = "Build an object: " + PlayerPrefs.GetFloat("score");	
 	}
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class basic : MonoBehaviour
 {
 	public static basic bs = new basic();
-	public static float money = 700;
+	public static float money = 70;
 	public static float score = 0;
 	public static float time_boost = 0;
 	public static float boost_time = 30;
@@ -77,10 +77,4 @@ public class basic : MonoBehaviour
 	}
 
 }
-namespace YG
-{
-	public partial class SavesYG
-	{
-		public float score = 0;
-	}
-}
+

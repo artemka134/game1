@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using YG;
 
 public class end_game : MonoBehaviour
 {
@@ -14,12 +13,12 @@ public class end_game : MonoBehaviour
 		if (other.gameObject.tag == "zombie" && a == false)
 		{
 			end_game_obj.SetActive(true);
-			end_game_text.text = "Вы проиграли! Ваш счёт: " + basic.score;
+			end_game_text.text = "You lost! Your score: " + basic.score;
 			a = true;
-			if (basic.score > YG2.saves.score)
+			if (basic.score > PlayerPrefs.GetFloat("score"))
 			{
-				YG2.saves.score = basic.score;
-				YG2.SaveProgress();
+				PlayerPrefs.SetFloat("score", basic.score);
+				PlayerPrefs.Save();
 			}
 		}
 	}
